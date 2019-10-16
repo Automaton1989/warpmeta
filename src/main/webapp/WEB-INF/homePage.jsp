@@ -133,13 +133,25 @@
 			</div>
 			<div class="row">
 				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-september-qualifier-3/5d657214f455104094438630/info?infoTab=details">
+					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-october-qualifier-3/5d994a53d8f577690349407d/info?infoTab=details">
 					<div class="card">
 					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
 					    <div class="card-body">
-						  <p class="card-text">WarpMeta September Qualifier 4</p>
+						  <p class="card-text">WarpMeta October Qualifier 3</p>
 						  <hr class="my-4">
-						  <p class="card-text">Sep 22nd 2019, 9:00AM PDT</p>
+						  <p class="card-text">Oct 17th, 2019 - 4:00PM PDT</p>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
+					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-october-qualifier-4/5d994a96f2a453690d702ef1/info?infoTab=details">
+					<div class="card">
+					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
+					    <div class="card-body">
+						  <p class="card-text">WarpMeta October Qualifier 4</p>
+						  <hr class="my-4">
+						  <p class="card-text">Oct 20th, 2019 - 9:00AM PDT</p>
 						</div>
 					</div>
 					</a>

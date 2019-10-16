@@ -69,18 +69,22 @@ public class WarpmetaController {
 	public String blogPage(@ModelAttribute("user")User user, Model model, HttpSession session) {
 		if(session.getAttribute("userId") == null) {
 	        Blog b = warpService.findBlogByTitle("WarpMeta Herald");
+	        List<Post> posts = warpService.reversePosts("WarpMeta Herald");
+	        model.addAttribute("posts", posts);
 	        model.addAttribute("blog", b);
 			return "blog.jsp";
 		}
         Long userId = (Long) session.getAttribute("userId");
         User u = warpService.findUserById(userId);
         Blog b = warpService.findBlogByTitle("WarpMeta Herald");
+        List<Post> posts = warpService.reversePosts("WarpMeta Herald");
         Role r = warpService.findRoleByName("Admin");
         Role a = warpService.findRoleByName("Author");
         model.addAttribute("author", a);
         model.addAttribute("user", u);
         model.addAttribute("admin", r);
         model.addAttribute("blog", b);
+        model.addAttribute("posts", posts);
         return "blog.jsp";
 	}
 	

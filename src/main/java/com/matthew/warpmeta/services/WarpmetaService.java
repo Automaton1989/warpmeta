@@ -1,5 +1,6 @@
 package com.matthew.warpmeta.services;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -85,6 +86,13 @@ public class WarpmetaService {
     
     public Post findPostByTitle(String title) {
     	return postRepo.findByTitleIs(title);
+    }
+    
+    public List<Post> reversePosts(String title) {
+    	Blog blog = blogRepo.findByTitleIs(title);
+    	List<Post> posts = blog.getPosts();
+    	Collections.reverse(posts);
+    	return posts;
     }
     
 	public void deletePost(String title) {

@@ -93,7 +93,7 @@
 				<h3 id="blogHeader">Posts</h3>
 			</div>
 			<div class="row">
-				<c:forEach items="${blog.posts}" var="post">
+				<c:forEach items="${posts}" var="post">
 					<c:if test="${post.published}">
 						<div class="col-xl-6 col-lg-6 col-med-12 col-sm-12 col-12">
 						<a href="/blog/${post.title}">
@@ -111,7 +111,7 @@
 			</div>
 			<c:if test="${user.user_roles.contains(author)}">
 			<h1 style="margin-left: 1rem;">Saved Posts</h1>
-				<c:forEach items="${blog.posts}" var="post">
+				<c:forEach items="${posts}" var="post">
 					<c:if test="${!post.published}">
 						<div class="col-xl-6 col-lg-6 col-med-12 col-sm-12 col-12">
 						<a href="/blog/${post.title}/draft">

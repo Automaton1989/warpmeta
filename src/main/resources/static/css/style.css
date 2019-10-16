@@ -580,6 +580,12 @@ footer {
 /* Blog Page End */
 
 /* View Post Page Start */
+
+#disqus_thread {
+	width: 100%;
+	padding: 2rem;
+}
+
 #post {
 	background-color: white;
 }
