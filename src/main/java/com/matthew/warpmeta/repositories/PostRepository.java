@@ -11,4 +11,5 @@ import com.matthew.warpmeta.models.Post;
 public interface PostRepository extends CrudRepository<Post, Long> {
     List<Post> findAll();
 	Post findByTitleIs(String title);
+	List<Post> findTop5ByOrderByIdDesc();
 }

@@ -13,6 +13,16 @@
 <title>WarpMeta Gaming | Blog</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150364751-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150364751-1');
+</script>
+<script data-ad-client="ca-pub-7479025328388647" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body class="fade-in">
 	<nav class="navbar navbar-expand-lg navbar-dark">
@@ -92,41 +102,44 @@
 			<div align="center" class="d-block d-sm-block d-md-block d-lg-none offset-3 col-6">
 				<h3 id="blogHeader">Posts</h3>
 			</div>
-			<div class="row">
+			<div id="published-posts" class="row">
 				<c:forEach items="${posts}" var="post">
 					<c:if test="${post.published}">
-						<div class="col-xl-6 col-lg-6 col-med-12 col-sm-12 col-12">
-						<a href="/blog/${post.title}">
-							<div class="card bg-dark text-white">
-							  <img class="card-img" src="/image/${post.fileName}" alt="Card image">
-							  <div class="card-img-overlay">
-							    <h5 class="card-title">${post.title}</h5>
-							    <p class="card-text">${post.description}</p>
+						<div class="col-xl-4 col-lg-6 col-med-6 col-sm-12 col-12">
+							<div class="card">
+							  <img class="card-img-top" src="/image/${post.fileName}" alt="Card image">
+							  <div class="card-body">
+							  	<a href="/blog/${post.title}" target="_blank">
+							    	<h5 class="card-title text-center">${post.title}</h5>
+							    </a>
+							    <p class="card-text text-dark">${post.description}</p>
+							    <p class="card-text text-dark">Date Posted: ${post.createdAt}</p>
 							  </div>
 							</div>
-						</a>
 						</div>
 					</c:if>
 				</c:forEach>
 			</div>
 			<c:if test="${user.user_roles.contains(author)}">
-			<h1 style="margin-left: 1rem;">Saved Posts</h1>
+			<h1 style="margin-left: 1rem;">Saved Posts (Not Published)</h1>
+				<div id="non-published-posts" class="row">
 				<c:forEach items="${posts}" var="post">
 					<c:if test="${!post.published}">
-						<div class="col-xl-6 col-lg-6 col-med-12 col-sm-12 col-12">
-						<a href="/blog/${post.title}/draft">
-							<div class="card bg-dark text-white">
-							  <img class="card-img" src="/image/${post.fileName}" alt="Card image">
-							  <div class="card-img-overlay">
-							    <h5 class="card-title">${post.title}</h5>
-							    <p class="card-text">${post.description}</p>
-							    <p class="card-text">Not Published</p>
+						<div class="col-xl-4 col-lg-6 col-med-12 col-sm-12 col-12">
+							<div class="card">
+							  <img class="card-img-top" src="/image/${post.fileName}" alt="Card image">
+							  <div class="card-body">
+							  <a target="_blank" href="/blog/${post.title}/draft">
+							    <h5 class="card-title text-center">${post.title}</h5>
+							  </a>
+							    <p class="card-text text-dark">${post.description}</p>
+							    <p class="card-text text-dark">Date Posted: ${post.createdAt}</p>
 							  </div>
 							</div>
-						</a>
 						</div>
 					</c:if>
 				</c:forEach>
+				</div>
 			</c:if>
 		</div>
 	</div>

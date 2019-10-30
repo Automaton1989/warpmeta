@@ -149,7 +149,11 @@ public class WarpmetaService {
 			return null;
 		}
 	}
-
+	
+	public List<Post> findLastPost() {
+		return postRepo.findTop5ByOrderByIdDesc();
+	}
+	
 	public Blog findBlogById(Long blogId) {
     	Optional<Blog> b = blogRepo.findById(blogId);
     	

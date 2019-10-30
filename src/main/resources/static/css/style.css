@@ -35,6 +35,44 @@
 				opacity: 1;
 				background-color: #C0C0C0;
 			}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+	60% {
+		-webkit-transform: translateY(-8px);
+		-ms-transform:     translateY(-8px);
+		transform:         translateY(-8px)
+	}
+}
+
+.navbar-brand {
+	border-radius: 10px;
+	 -webkit-animation-duration: 1s;
+	 animation-duration: 1s;
+	 -webkit-animation-fill-mode: both;
+	 animation-fill-mode: both;
+	 -webkit-animation-timing-function: ease-in-out;
+	 animation-timing-function: ease-in-out;
+}
+
+	.navbar-brand img {
+		margin: 5px;
+	}
+
+.navbar-brand:hover {
+	animation-name: bounce;
+	-moz-animation-name: bounce;
+}
+
 .dropdown-menu {
 	background-color: #2b3991;
 	border: none;
@@ -76,16 +114,17 @@
 			background-color: #2b3991;
 			color: white;
 			opacity: 1;
-			box-shadow: 5px 5px 10px black;
 		}
 			#homeText button:hover {
 				color: #2b3991;
 				background-color: white;
 				border: 1px solid #2b3991;
+				transform: translateY(-3px);
+				box-shadow: 3px 3px 10px black;
 			}
 			#homeText button:active {
 				box-shadow: 3px 3px 10px black;
-				transform: translateY(4px);
+				transform: translateY(3px);
 			}
 			
 	#homeSmallText {
@@ -108,16 +147,17 @@
 			background-color: #2b3991;
 			color: white;
 			opacity: 1;
-			box-shadow: 5px 5px 10px black;
 		}
 			#homeSmallText button:hover {
 				color: #2b3991;
 				background-color: white;
 				border: 1px solid #2b3991;
+				transform: translateY(-3px);
+				box-shadow: 3px 3px 10px black;
 			}
 			#homeSmallText button:active {
 				box-shadow: 3px 3px 10px black;
-				transform: translateY(4px);
+				transform: translateY(3px);
 			}
 	
 #homeTeams {
@@ -135,16 +175,13 @@
 		border: 2px solid black;
 		width: 22rem;
 		height: 13rem;
-		box-shadow: 10px 10px 5px grey;
 		margin-bottom: 15px;
 		padding: 0px;
 	}
 		#homeTeams .card:hover {
-			cursor: pointer;
-		}
-		#homeTeams .card:active {
-			transform: translateY(4px);
+			transform: translateY(-3px);
 			box-shadow: 3px 3px 5px grey;
+			cursor: pointer;
 		}
 		#homeTeams .card a {
 			width: 100%;
@@ -195,7 +232,6 @@
 		border: 2px solid black;
 		width: 22rem;
 		height: 20rem;
-		box-shadow: 10px 10px 5px grey;
 		margin-bottom: 15px;
 		padding: 0px;
 	}
@@ -203,21 +239,14 @@
 			margin-bottom: 0px;
 		}
 		#homeTournaments .card:hover {
-			cursor: pointer;
-		}
-		#homeTournaments .card:active {
-			transform: translateY(4px);
+			transform: translateY(-3px);
 			box-shadow: 3px 3px 5px grey;
+			cursor: pointer;
 		}
 		#homeTournaments .card img {
 			width: 100%;
 			height: 100%;
-			transition: 0.3s ease-out;
 		}
-			#homeTournaments .card img:hover {
-				filter: grayscale(100%);
-				transition: 0.3s ease-in;
-			}
 		#homeTournaments .card .card-text {
 			color: black;
 		}
@@ -280,17 +309,15 @@ footer {
 }
 	#fullAutoTeams .card {
 		border: 2px solid black;
-		box-shadow: 7px 7px 10px grey;
 		margin-bottom: 15px;
-		transition: 0.3s ease-out;
 	}
 		#fullAutoTeams .card:hover {
 			cursor: pointer;
-			filter: grayscale(100%);
-			transition: 0.3s ease-in;
+			transform: translateY(-3px);
+			box-shadow: 3px 3px 5px grey;
 		}
 		#fullAutoTeams .card:active {
-			transform: translateY(4px);
+			transform: translateY(3px);
 			box-shadow: 3px 3px 5px grey;
 		}
 	#fullAutoTeams .card img {
@@ -411,13 +438,10 @@ footer {
 		width: 140px;
 		height: 140px;
 		border-radius: 25px;
-		box-shadow: 3px 3px 15px black;
-		transition: 0.3s ease-out;
 	}
 		.image-container img:hover {
-			-webkit-filter: grayscale(100%);
-			filter: grayscale(100%);
-			transition: 0.3s ease-in;
+			transform: translateY(-3px);
+			box-shadow: 3px 3px 15px black;
 		}
 	.team-card-wording {
 		margin-top: 5px;
@@ -502,16 +526,17 @@ footer {
 			background-color: #2b3991;
 			color: white;
 			opacity: 1;
-			box-shadow: 5px 5px 10px black;
 		}
 			#blogText button:hover {
 				color: #2b3991;
 				background-color: white;
 				border: 1px solid #2b3991;
+				transform: translateY(-3px);
+				box-shadow: 5px 5px 10px black;
 			}
 			#blogText button:active {
 				box-shadow: 3px 3px 10px black;
-				transform: translateY(4px);
+				transform: translateY(3px);
 			}
 			
 	#blogSmallText {
@@ -534,16 +559,17 @@ footer {
 			background-color: #2b3991;
 			color: white;
 			opacity: 1;
-			box-shadow: 5px 5px 10px black;
 		}
 			#blogSmallText button:hover {
 				color: #2b3991;
 				background-color: white;
 				border: 1px solid #2b3991;
+				transform: translateY(-3px);
+				box-shadow: 5px 5px 10px black;
 			}
 			#blogSmallText button:active {
-				box-shadow: 3px 3px 10px black;
-				transform: translateY(4px);
+				box-shadow: 5px 5px 10px black;
+				transform: translateY(3px);
 			}
 
 #blogPosts {
@@ -557,26 +583,29 @@ footer {
 		margin-bottom: 20px;
 		color: #2b3991;
 	}
-	
-	#blogPosts .card {
-		border: 2px solid black;
-		box-shadow: 10px 10px 5px grey;
-		margin-bottom: 15px;
-		padding: 0px;
-		transition: 0.3s ease-out;
+
+#published-posts {
+	margin-bottom: 1rem;
+}	
+
+	#published-posts .card{
+		min-height: 380px;	
 	}
-		#blogPosts .card:hover {
-			cursor: pointer;
-			filter: grayscale(100%);
-			transition: 0.3s ease-in;
-		}
-		#blogPosts .card:active {
-			transform: translateY(4px);
-			box-shadow: 3px 3px 5px grey;
-		}
-		#blogPosts .card img {
-			height: 270px;
-		}
+
+#non-published-posts .card{
+	min-height: 380px;
+}
+
+#blogPosts .card {
+	margin-bottom: 1rem;
+}
+
+#blogPosts .card:hover {
+	transform: translateY(-3px);
+	box-shadow: 3px 3px 5px grey;
+	transition: 0.3s ease;
+}
+
 /* Blog Page End */
 
 /* View Post Page Start */
@@ -593,7 +622,7 @@ footer {
 #postMain {
 	width: 100%;
 	height: 350px;
-	background-color: black;
+	margin-top: 2rem;
 }
 	#postMain img {
 		padding-left: 10%;
@@ -616,7 +645,6 @@ footer {
 	min-height: 250px;
 	width: 100%;
 	background-color: white;
-	margin-top: 100px;
 }
 	#postContent p{
 		margin-top: 10px;

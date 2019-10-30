@@ -13,6 +13,16 @@
 <title>WarpMeta Gaming | Home</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150364751-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150364751-1');
+</script>
+<script data-ad-client="ca-pub-7479025328388647" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body class="fade-in">
 	<nav class="navbar navbar-expand-lg navbar-dark">
@@ -133,25 +143,13 @@
 			</div>
 			<div class="row">
 				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-october-qualifier-3/5d994a53d8f577690349407d/info?infoTab=details">
+					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-november-qualifier-1/5db8c827ec48d250ecab8a05/info?infoTab=details">
 					<div class="card">
 					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
 					    <div class="card-body">
-						  <p class="card-text">WarpMeta October Qualifier 3</p>
+						  <p class="card-text">WarpMeta November Qualifier #1</p>
 						  <hr class="my-4">
-						  <p class="card-text">Oct 17th, 2019 - 4:00PM PDT</p>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-october-qualifier-4/5d994a96f2a453690d702ef1/info?infoTab=details">
-					<div class="card">
-					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
-					    <div class="card-body">
-						  <p class="card-text">WarpMeta October Qualifier 4</p>
-						  <hr class="my-4">
-						  <p class="card-text">Oct 20th, 2019 - 9:00AM PDT</p>
+						  <p class="card-text">Nov 2nd, 2019 - 9:00AM PDT</p>
 						</div>
 					</div>
 					</a>
