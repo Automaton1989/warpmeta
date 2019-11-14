@@ -22,6 +22,7 @@ import com.matthew.warpmeta.models.Blog;
 import com.matthew.warpmeta.models.Post;
 import com.matthew.warpmeta.models.Role;
 import com.matthew.warpmeta.models.User;
+import com.matthew.warpmeta.models.Video;
 import com.matthew.warpmeta.services.WarpmetaService;
 import com.matthew.warpmeta.validator.UserValidator;
 
@@ -65,6 +66,23 @@ public class WarpmetaController {
 		return "aboutUs.jsp";
 	}
 	
+	@RequestMapping("/allvideos")
+	public String videosPage(@ModelAttribute("user")User user, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			List<Video> videos = warpService.reverseVideos();
+			model.addAttribute("videos", videos);
+			return "allVideos.jsp";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		User u = warpService.findUserById(userId);
+		List<Video> videos = warpService.reverseVideos();
+		Role r = warpService.findRoleByName("Admin");
+		model.addAttribute("user", u);
+		model.addAttribute("admin", r);
+		model.addAttribute("videos", videos);
+		return "allVideos.jsp";
+	}
+	
 	@RequestMapping("/blog")
 	public String blogPage(@ModelAttribute("user")User user, Model model, HttpSession session) {
 		if(session.getAttribute("userId") == null) {
@@ -86,6 +104,23 @@ public class WarpmetaController {
         model.addAttribute("blog", b);
         model.addAttribute("posts", posts);
         return "blog.jsp";
+	}
+	
+	@RequestMapping("/allvideos/{title}")
+	public String singleVideoPage(@ModelAttribute("user")User user, @PathVariable("title")String title, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			Video v = warpService.findVideoByTitle(title);
+			model.addAttribute("video", v);
+			return "viewVideo.jsp";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		User u = warpService.findUserById(userId);
+		Video v = warpService.findVideoByTitle(title);
+		Role a = warpService.findRoleByName("admin");
+		model.addAttribute("admin", a);
+		model.addAttribute("user", u);
+		model.addAttribute("video", v);
+		return "viewVideo.jsp";
 	}
 	
 	@RequestMapping("/blog/{title}")
@@ -222,6 +257,33 @@ public class WarpmetaController {
         return "redirect:/";
     }
     
+    @RequestMapping(value="/new-video", method=RequestMethod.POST)
+    public String newVideo(@ModelAttribute("video") Video video, Model model, HttpSession session) {
+    	warpService.createVideo(video);
+    	model.addAttribute("video", video);
+    	return "redirect:/";
+    }
+    
+    @RequestMapping(value = "/create-video", method = RequestMethod.GET)
+    public String createVideo(Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+    		return "redirect:/";
+    	}
+        Long userId = (Long) session.getAttribute("userId");
+        User u = warpService.findUserById(userId);
+        Role r = warpService.findRoleByName("Admin");
+        if(u.getUser_roles().contains(r)) {
+        	System.out.println("Create Video Entry Successfull");
+            model.addAttribute("video", new Video());
+            model.addAttribute("user", u);
+            model.addAttribute("admin", r);
+            return "videoForm.jsp";
+        } else {
+        	System.out.println("Failed Entry");
+    		return "redirect:/";
+        }
+    }
+    
     @RequestMapping(value = "/new-post", method=RequestMethod.POST)
     public String uploadResources( HttpServletRequest servletRequest,
                                  @ModelAttribute("post") Post post,
@@ -302,6 +364,25 @@ public class WarpmetaController {
     		return "redirect:/";
         }
     }
+    
+    @RequestMapping("/allvideos/{title}/draft")
+    public String draftVideo(@PathVariable("title")String title, Model model, HttpSession session) {
+    	Long userId = (Long) session.getAttribute("userId");
+    	User u = warpService.findUserById(userId);
+        Role r = warpService.findRoleByName("Admin");
+    	Video v = warpService.findVideoByTitle(title);
+    	if(u.getUser_roles().contains(r)) {
+            model.addAttribute("video", v);
+            model.addAttribute("user", u);
+            model.addAttribute("admin", r);
+        	return "videoDraft.jsp";
+    	}
+    	else {
+    		System.out.println("You are not admin");
+    		return "redirect:/allvideos";
+    	}
+    }
+    
     @RequestMapping("/blog/{title}/draft")
     public String draftPost(@PathVariable("title")String title, Model model, HttpSession session) {
     	Long userId = (Long) session.getAttribute("userId");
@@ -317,6 +398,23 @@ public class WarpmetaController {
     	else {
     		System.out.println("You are not creator or admin");
     		return "redirect:/blog";
+    	}
+    }
+    
+    @RequestMapping("/allvideos/{title}/publish")
+	public String publishVideo(@PathVariable("title")String title, HttpSession session) {
+    	Long userId = (Long) session.getAttribute("userId");
+    	User u = warpService.findUserById(userId);
+        Role r = warpService.findRoleByName("Admin");
+    	Video v = warpService.findVideoByTitle(title);
+    	if(u.getUser_roles().contains(r)) {
+    		System.out.println("You are either creator or admin");
+        	warpService.publishVideo(v);
+        	return "redirect:/allvideos";
+    	}
+    	else {
+    		System.out.println("You are not creator or admin");
+    		return "redirect:/";
     	}
     }
     
@@ -337,6 +435,23 @@ public class WarpmetaController {
     	}
     }
     
+    @RequestMapping("/allvideos/{title}/unpublish")
+	public String unpublishVideo(@PathVariable("title")String title, HttpSession session) {
+    	Long userId = (Long) session.getAttribute("userId");
+    	User u = warpService.findUserById(userId);
+        Role r = warpService.findRoleByName("Admin");
+    	Video v = warpService.findVideoByTitle(title);
+    	if(u.getUser_roles().contains(r)) {
+    		System.out.println("You are either creator or admin");
+        	warpService.unpublishVideo(v);
+        	return "redirect:/allvideos";
+    	}
+    	else {
+    		System.out.println("You are not creator or admin");
+    		return "redirect:/";
+    	}
+    }
+    
     @RequestMapping("/blog/{title}/unpublish")
 	public String unpublishPost(@PathVariable("title")String title, HttpSession session) {
     	Long userId = (Long) session.getAttribute("userId");
@@ -351,6 +466,22 @@ public class WarpmetaController {
     	else {
     		System.out.println("You are not creator or admin");
     		return "redirect:/blog";
+    	}
+    }
+    
+    @RequestMapping("/allvideos/{title}/delete")
+	public String deleteVideo(@PathVariable("title")String title, HttpSession session) {
+    	Long userId = (Long) session.getAttribute("userId");
+    	User u = warpService.findUserById(userId);
+        Role r = warpService.findRoleByName("Admin");
+    	if(u.getUser_roles().contains(r)) {
+    		System.out.println("You are an admin");
+        	warpService.deletePost(title);
+        	return "redirect:/allvideos";
+    	}
+    	else {
+    		System.out.println("You are not an admin");
+    		return "redirect:/";
     	}
     }
     

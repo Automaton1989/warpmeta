@@ -495,6 +495,173 @@ footer {
 		}
 /* Create Post End */
 
+/* Videos page start */
+
+#videoMain {
+	width: 100%;
+	min-height: 600px;
+	background-image: url("/img/R6S.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.8;
+	position: relative; 
+}
+
+#videoText {
+		position: absolute;
+		bottom: 0px;
+		margin-left: 200px;
+		margin-bottom: 100px;
+		z-index: 2;
+		background: rgba(128,128,128, 0.5);
+		padding: 15px;
+		border-radius: 8px;
+		box-shadow: 10px 10px 5px black;
+	}
+		#videoText h3, p {
+			color: white;
+			opacity: 1;
+		}
+		#videoText button {
+			background-color: #2b3991;
+			color: white;
+			opacity: 1;
+		}
+			#videoText button:hover {
+				color: #2b3991;
+				background-color: white;
+				border: 1px solid #2b3991;
+				transform: translateY(-3px);
+				box-shadow: 5px 5px 10px black;
+			}
+			#videoText button:active {
+				box-shadow: 3px 3px 10px black;
+				transform: translateY(3px);
+			}
+			
+	#videoSmallText {
+		position: absolute;
+		bottom: 0px;
+		margin-left: 75px;
+		margin-bottom: 100px;
+		margin-right: 40px;
+		z-index: 2;
+		background: rgba(128,128,128, 0.5);
+		padding: 15px;
+		border-radius: 8px;
+		box-shadow: 10px 10px 5px black;
+	}
+		#videoSmallText h3, p {
+			color: white;
+			opacity: 1;
+		}
+		#videoSmallText button {
+			background-color: #2b3991;
+			color: white;
+			opacity: 1;
+		}
+			#videoSmallText button:hover {
+				color: #2b3991;
+				background-color: white;
+				border: 1px solid #2b3991;
+				transform: translateY(-3px);
+				box-shadow: 5px 5px 10px black;
+			}
+			#videoSmallText button:active {
+				box-shadow: 5px 5px 10px black;
+				transform: translateY(3px);
+			}
+
+#videoList {
+	width: 100%;
+	min-height: 300px;
+	opacity: 0.8;
+	position: relative; 
+}
+	#videoList #videoHeader {
+		margin-top: 25px;
+		margin-bottom: 20px;
+		color: #2b3991;
+	}
+
+#published-videos {
+	margin-bottom: 1rem;
+}	
+
+	#published-videos .card{
+		min-height: 380px;	
+	}
+
+#non-published-videos .card{
+	min-height: 380px;
+}
+
+#videoList .card {
+	margin-bottom: 1rem;
+}
+
+#videoList .card:hover {
+	transform: translateY(-3px);
+	box-shadow: 3px 3px 5px grey;
+	transition: 0.3s ease;
+}
+
+/* Videos page end */
+
+/* Video Page Start */
+
+#video {
+	background-color: white;
+}
+
+#videoContent video {
+	padding: 1rem;
+}
+	
+#videoTitle {
+	height: 70px;
+	width: 100%;
+	background-color: white;
+}
+	#videoTitle h3 {
+		margin-top: 25px;
+		margin-bottom: 15px;
+	}
+	#videoContentLarge p{
+		margin-top: 10px;
+		color: black;
+	}
+	#videoContentMedium p {
+		margin-top: 10px;
+		color: black;
+	}
+	#videoContentSmall p {
+		margin-top: 10px;
+		color: black;
+	}
+	
+#copyText {
+	background-color: #2b3991;
+	color: white;	
+	padding: 0.1rem .75rem;
+	margin: 0px 0px 3px 0px;
+}
+	#copyText:hover {
+		color: #2b3991;
+		background-color: white;
+		border: 1px solid #2b3991;
+	}
+#shareLinks {
+	margin-bottom: 25px;
+}
+
+.video-buttons-row {
+	margin-bottom: 1rem;
+}
+
+/* Video Page End */
+
 /* Blog Start */
 
 #blogMain {

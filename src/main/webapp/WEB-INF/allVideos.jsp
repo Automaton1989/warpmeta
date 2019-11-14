@@ -10,9 +10,9 @@
   <meta name="keywords" content="gaming, eSports, teams, The Elder Scrolls: Legends, Rainbow Six Siege, Blog, WarpMeta, tournaments">
   <meta name="author" content="Automaton">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WarpMeta Gaming | Home</title>
+<title>WarpMeta Gaming | Videos</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150364751-1"></script>
 <script>
@@ -48,7 +48,7 @@
 	        <a class="nav-link" href="/blog">Blog</a>
 	      </li>
 	      <li class="nav-item">
-	      	<a class="nav-link" href="/allvideos">Videos</a>
+	      	<a class="nav-link active" href="/allvideos">Videos</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="/about">About</a>
@@ -75,106 +75,75 @@
 	    	<a href="/dashboard">Dashboard</a>
 	    </span>
 	    </c:if>
-	    <c:if test="${user.user_roles.contains(admin)}">
+	    <c:if test="${user.user_roles.contains(author)}">
 	    <span class="navbar-text text-light">
 	    	| <a href="/create-post">Create Post</a>
-	    </span>
-	    </c:if>
-	    <c:if test="${user.user_roles.contains(admin)}">
-	    <span class="navbar-text text-light">
-	    	| <a href="/create-video">Create Video</a>
 	    </span>
 	    </c:if>
 	  </div>
 	</nav>
 	<div class="container-fluid">
 	<div class="row">
-			<div align="center" id="homeMain">
-				<div class="d-none d-lg-block" id = "homeText">
-					<h3>WarpMeta</h3>
-					<p>WarpMeta is moving its gaming teams to Full Auto</p>
-					<a href="/fullauto"><button class="btn">View Full Auto</button></a>
-				</div>
-				<div class="d-block d-sm-block d-md-block d-lg-none" id = "homeSmallText">
-					<h3>WarpMeta</h3>
-					<p>WarpMeta is moving its gaming teams to Full Auto</p>
-					<a href="/fullauto"><button class="btn">View Full Auto</button></a>
-				</div>
+		<div align="center" id="videoMain">
+			<div class="d-none d-sm-none d-md-none d-lg-block" id="videoText">
+				<h3>Videos</h3>
+				<p>View our most recent video content!</p>
+				<a href="/allvideos/Test%20Video"><button class="btn">Watch Video</button></a>
 			</div>
-	</div>
-	<div class="row">
-		<div id="homeTeams">
-			<div class="d-none d-sm-none d-md-none d-lg-block offset-1 col-6">
-				<h3 id="teamHeader">Teams</h3>
-			</div>
-			<div align="center" class="d-block d-sm-block d-md-block d-lg-none offset-3 col-6">
-				<h3 id="teamHeader">Teams</h3>
-			</div>
-			<div class="row">
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<div class="card">
-					<a href="/fullauto/r6">
-					<div class="container">
-					  <img src="/img/R6Team.jpg" class="card-img-top" alt="R6 Team">
-					  <div class="overlay">Rainbow Six Siege</div>
-					</div>
-					</a>
-					</div>
-				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<div class="card">
-					<a href="/fullauto/tesl">
-					<div class="container">
-					  <img src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Team">
-					  <div class="overlay">The Elder Scrolls: Legends</div>
-					</div>
-					</a>
-					</div>
-				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<div class="card">
-					<a href="#">
-					  <img style="opacity: 0.5;" src="https://www.agentdk.com/wp-content/uploads/2018/06/comingsoon.png" class="card-img-top" alt="Blank Team">
-					</a>
-					</div>
-				</div>
+			<div class="d-block d-sm-block d-md-block d-lg-none" id = "videoSmallText">
+				<h3>Videos</h3>
+				<p>View our most recent video content!</p>
+				<a href="/allvideos/Test%20Video"><button class="btn">Watch Video</button></a>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div id="homeTournaments">
+		<div id="videoList">
 			<div class="d-none d-sm-none d-md-none d-lg-block offset-1 col-6">
-				<h3 id="tournamentHeader">Upcoming Tournaments</h3>
+				<h3 id="videoHeader">Videos</h3>
 			</div>
 			<div align="center" class="d-block d-sm-block d-md-block d-lg-none offset-3 col-6">
-				<h3 id="tournamentHeader">Upcoming Tournaments</h3>
+				<h3 id="videoHeader">Videos</h3>
 			</div>
-			<div class="row">
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-november-qualifier-3/5dcb943b6b3429234be0c084/info?infoTab=details">
-					<div class="card">
-					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
-					    <div class="card-body">
-						  <p class="card-text">WarpMeta November Qualifier #3</p>
-						  <hr class="my-4">
-						  <p class="card-text">Nov 16th, 2019 - 9:00AM PDT</p>
+			<div id="published-videos" class="row">
+				<c:forEach items="${videos}" var="video">
+					<c:if test="${video.published}">
+						<div class="col-xl-4 col-lg-6 col-med-6 col-sm-12 col-12">
+							<div class="card">
+							  <img class="card-img-top" src="${video.imageURL}" alt="Card image">
+							  <div class="card-body">
+							  	<a href="/allvideos/${video.title}" target="_blank">
+							    	<h5 class="card-title text-center">${video.title}</h5>
+							    </a>
+							    <p class="card-text text-dark">${video.description}</p>
+							    <p class="card-text text-dark">Date Posted: ${video.createdAt}</p>
+							  </div>
+							</div>
 						</div>
-					</div>
-					</a>
-				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-november-qualifier-4/5dcb94f1901cc20d79e68b7f/info?infoTab=details">
-					<div class="card">
-					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
-					    <div class="card-body">
-						  <p class="card-text">WarpMeta November Qualifier #4</p>
-						  <hr class="my-4">
-						  <p class="card-text">Nov 17th, 2019 - 9:00AM PDT</p>
-						</div>
-					</div>
-					</a>
-				</div>
+					</c:if>
+				</c:forEach>
 			</div>
+			<c:if test="${user.user_roles.contains(admin)}">
+			<h1 style="margin-left: 1rem;">Saved Videos (Not Published)</h1>
+				<div id="non-published-videos" class="row">
+				<c:forEach items="${videos}" var="video">
+					<c:if test="${!video.published}">
+						<div class="col-xl-4 col-lg-6 col-med-12 col-sm-12 col-12">
+							<div class="card">
+							  <img class="card-img-top" src="${video.imageURL}" alt="Card image">
+							  <div class="card-body">
+							  <a target="_blank" href="/allvideos/${video.title}/draft">
+							    <h5 class="card-title text-center">${video.title}</h5>
+							  </a>
+							    <p class="card-text text-dark">${video.description}</p>
+							    <p class="card-text text-dark">Date Posted: ${video.createdAt}</p>
+							  </div>
+							</div>
+						</div>
+					</c:if>
+				</c:forEach>
+				</div>
+			</c:if>
 		</div>
 	</div>
 </div>

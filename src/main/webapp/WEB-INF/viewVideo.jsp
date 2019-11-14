@@ -10,9 +10,9 @@
   <meta name="keywords" content="gaming, eSports, teams, The Elder Scrolls: Legends, Rainbow Six Siege, Blog, WarpMeta, tournaments">
   <meta name="author" content="Automaton">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WarpMeta Gaming | Home</title>
+<title>WarpMeta Gaming | ${video.title}</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150364751-1"></script>
 <script>
@@ -87,97 +87,82 @@
 	    </c:if>
 	  </div>
 	</nav>
-	<div class="container-fluid">
-	<div class="row">
-			<div align="center" id="homeMain">
-				<div class="d-none d-lg-block" id = "homeText">
-					<h3>WarpMeta</h3>
-					<p>WarpMeta is moving its gaming teams to Full Auto</p>
-					<a href="/fullauto"><button class="btn">View Full Auto</button></a>
-				</div>
-				<div class="d-block d-sm-block d-md-block d-lg-none" id = "homeSmallText">
-					<h3>WarpMeta</h3>
-					<p>WarpMeta is moving its gaming teams to Full Auto</p>
-					<a href="/fullauto"><button class="btn">View Full Auto</button></a>
-				</div>
-			</div>
-	</div>
-	<div class="row">
-		<div id="homeTeams">
-			<div class="d-none d-sm-none d-md-none d-lg-block offset-1 col-6">
-				<h3 id="teamHeader">Teams</h3>
-			</div>
-			<div align="center" class="d-block d-sm-block d-md-block d-lg-none offset-3 col-6">
-				<h3 id="teamHeader">Teams</h3>
-			</div>
-			<div class="row">
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<div class="card">
-					<a href="/fullauto/r6">
-					<div class="container">
-					  <img src="/img/R6Team.jpg" class="card-img-top" alt="R6 Team">
-					  <div class="overlay">Rainbow Six Siege</div>
-					</div>
-					</a>
-					</div>
-				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<div class="card">
-					<a href="/fullauto/tesl">
-					<div class="container">
-					  <img src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Team">
-					  <div class="overlay">The Elder Scrolls: Legends</div>
-					</div>
-					</a>
-					</div>
-				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<div class="card">
-					<a href="#">
-					  <img style="opacity: 0.5;" src="https://www.agentdk.com/wp-content/uploads/2018/06/comingsoon.png" class="card-img-top" alt="Blank Team">
-					</a>
-					</div>
+	<div class="container-fluid" id="post">
+		<div class="row">
+			<div align="center" id="videoTitle">
+				<div class="col">
+					<h3>${video.title}</h3>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div id="homeTournaments">
-			<div class="d-none d-sm-none d-md-none d-lg-block offset-1 col-6">
-				<h3 id="tournamentHeader">Upcoming Tournaments</h3>
-			</div>
-			<div align="center" class="d-block d-sm-block d-md-block d-lg-none offset-3 col-6">
-				<h3 id="tournamentHeader">Upcoming Tournaments</h3>
-			</div>
-			<div class="row">
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-november-qualifier-3/5dcb943b6b3429234be0c084/info?infoTab=details">
-					<div class="card">
-					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
-					    <div class="card-body">
-						  <p class="card-text">WarpMeta November Qualifier #3</p>
-						  <hr class="my-4">
-						  <p class="card-text">Nov 16th, 2019 - 9:00AM PDT</p>
-						</div>
-					</div>
-					</a>
+		<div class="row d-flex justify-content-center">
+			<div id="videoContentLarge">
+				<div class="d-none d-lg-block col-lg-12 col-xl-12">
+					<video width="960" height="720" controls>
+						<source src="${video.videoURL}" type="video/mp4">
+					</video>
+					<p>Creator: ${video.creator}</p>
+					<p>Editor: ${video.editor}
+					<p>Posted: ${video.createdAt}</p>
 				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-november-qualifier-4/5dcb94f1901cc20d79e68b7f/info?infoTab=details">
-					<div class="card">
-					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
-					    <div class="card-body">
-						  <p class="card-text">WarpMeta November Qualifier #4</p>
-						  <hr class="my-4">
-						  <p class="card-text">Nov 17th, 2019 - 9:00AM PDT</p>
-						</div>
-					</div>
-					</a>
+			</div>
+			<div id="videoContentMedium">
+				<div class="d-none d-md-block d-lg-none col-md-12">
+					<video width="640" height="480" controls>
+						<source src="${video.videoURL}" type="video/mp4">
+					</video>
+					<p>Creator: ${video.creator}</p>
+					<p>Editor: ${video.editor}
+					<p>Posted: ${video.createdAt}</p>
+				</div>
+			</div>
+			<div id="videoContentSmall">
+				<div class="d-block col-12 col-sm-12 d-md-none">
+					<video width="320" height="240" controls>
+						<source src="${video.videoURL}" type="video/mp4">
+					</video>
+					<p>Creator: ${video.creator}</p>
+					<p>Editor: ${video.editor}
+					<p>Posted: ${video.createdAt}</p>
 				</div>
 			</div>
 		</div>
+		<hr my-4>
+		<div id="shareLinks" align="center" class="row">
+			<div class="col">
+				<p style="color: black;">Share this Video!</p>
+				<div style="margin-bottom: 10px;" class="col">
+					<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just read this blog post! " data-via="@warpmetagg" data-hashtags="#WarpMeta" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>			
+				</div>
+				<div class="col">
+					<!-- The text field -->
+					<input type="text" value="www.warpmeta.com/blog/${post.title}" id="myInput" readonly>
+					
+					<!-- The button used to copy the text -->
+					<button class="btn" id="copyText" onclick="myFunction()">Copy Link</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="disqus_thread"></div>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+		<c:if test="${user.user_roles.contains(admin)}">
+		<hr my-4>
+		<div class="row">
+			<div class="col">
+				<h3>For Admins only</h3>
+			</div>
+		</div>
+		<div class="row post-buttons-row">
+			<div class="col">
+				<button class="btn delete-button" onclick="confirmDeletion()">Delete Video</button>
+				<button class="btn publish-save-button" onclick="unpublishVideo()">Unpublish Video</button>
+				<a href="/allvideos/${video.title}/delete"><button class="btn publish-save-button">Edit Post</button></a>
+			</div>
+		</div>
+		</c:if>
 	</div>
-</div>
 <footer>
 	<div class="row">
 		<div align="center" class="col">
@@ -225,6 +210,50 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script>
+	function myFunction() {
+	  /* Get the text field */
+	  var copyText = document.getElementById("myInput");
+	  /* Select the text field */
+	  copyText.select();
+	
+	  /* Copy the text inside the text field */
+	  document.execCommand("copy");
+	
+	  /* Alert the copied text */
+	  alert("Copied the text: " + copyText.value);
+	}
+	function confirmDeletion() {
+		var d = confirm("Are you sure you want to delete this Video?");
+		if (d == true) {
+			window.location.href = "/allvideos/${video.title}/delete";
+		}
+	}
+
+	function unpublishVideo() {
+		var p = confirm("Are you sure you want to unpublish this Video?")
+		if (p == true) {
+			window.location.href = "/allvideos/${video.title}/unpublish";
+		}
+	}
+
+	/**
+	*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+	var disqus_config = function () {
+	this.page.url = "https://www.warpmeta.com/allvideos/${video.title}";  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = ${video.id}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+	s.src = '//warpmeta.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	
+</script>
 <script type="text/javascript">
     window.doorbellOptions = {
         "id": "10602",
@@ -237,5 +266,4 @@
         if (d.readyState == 'complete') { l(); }
     }(window, document, 'script'));
 </script>
-</body>
 </html>

@@ -11,10 +11,12 @@ import com.matthew.warpmeta.models.Blog;
 import com.matthew.warpmeta.models.Post;
 import com.matthew.warpmeta.models.Role;
 import com.matthew.warpmeta.models.User;
+import com.matthew.warpmeta.models.Video;
 import com.matthew.warpmeta.repositories.BlogRepository;
 import com.matthew.warpmeta.repositories.PostRepository;
 import com.matthew.warpmeta.repositories.RoleRepository;
 import com.matthew.warpmeta.repositories.UserRepository;
+import com.matthew.warpmeta.repositories.VideoRepository;
 
 @Service
 public class WarpmetaService {
@@ -22,12 +24,14 @@ public class WarpmetaService {
     private final RoleRepository roleRepo;
     private final PostRepository postRepo;
     private final BlogRepository blogRepo;
+    private final VideoRepository videoRepo;
     
-    public WarpmetaService(UserRepository userRepo, RoleRepository roleRepo, PostRepository postRepo, BlogRepository blogRepo) {
+    public WarpmetaService(UserRepository userRepo, RoleRepository roleRepo, PostRepository postRepo, BlogRepository blogRepo, VideoRepository videoRepo) {
         this.userRepo = userRepo;
         this.roleRepo = roleRepo;
         this.postRepo = postRepo;
         this.blogRepo = blogRepo;
+        this.videoRepo = videoRepo;
     }
     
     public void addRole(Role role, User user) {
@@ -88,11 +92,21 @@ public class WarpmetaService {
     	return postRepo.findByTitleIs(title);
     }
     
+    public Video findVideoByTitle(String title) {
+    	return videoRepo.findByTitleIs(title);
+    }
+    
     public List<Post> reversePosts(String title) {
     	Blog blog = blogRepo.findByTitleIs(title);
     	List<Post> posts = blog.getPosts();
     	Collections.reverse(posts);
     	return posts;
+    }
+    
+    public List<Video> reverseVideos() {
+    	List<Video> videos = videoRepo.findAll();
+    	Collections.reverse(videos);
+    	return videos;
     }
     
 	public void deletePost(String title) {
@@ -120,6 +134,21 @@ public class WarpmetaService {
 
 	public List<User> findAll() {
 		return userRepo.findAll();
+	}
+	
+	public Video createVideo(Video video) {
+		// TODO Auto-generated method stub
+		return videoRepo.save(video);
+	}
+	
+	public Video publishVideo(Video video) {
+		video.setPublishedOfVideo(video);
+		return videoRepo.save(video);
+	}
+	
+	public Video unpublishVideo(Video video) {
+		video.setDraftOfVideo(video);
+		return videoRepo.save(video);
 	}
 	
 	public Post publishPost(Post post) {

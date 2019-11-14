@@ -48,6 +48,9 @@
 	        <a class="nav-link" href="/blog">Blog</a>
 	      </li>
 	      <li class="nav-item">
+	      	<a class="nav-link" href="/allvideos">Videos</a>
+	      </li>
+	      <li class="nav-item">
 	        <a class="nav-link active" href="/about">About</a>
 	      </li>
 	      <li class="nav-item">
@@ -72,9 +75,14 @@
 	    	<a href="/dashboard">Dashboard</a>
 	    </span>
 	    </c:if>
-	    <c:if test="${user.user_roles.contains(author)}">
+	    <c:if test="${user.user_roles.contains(admin)}">
 	    <span class="navbar-text text-light">
 	    	| <a href="/create-post">Create Post</a>
+	    </span>
+	    </c:if>
+	    <c:if test="${user.user_roles.contains(admin)}">
+	    <span class="navbar-text text-light">
+	    	| <a href="/create-video">Create Video</a>
 	    </span>
 	    </c:if>
 	  </div>
