@@ -92,13 +92,13 @@
 			<div align="center" id="homeMain">
 				<div class="d-none d-lg-block" id = "homeText">
 					<h3>WarpMeta</h3>
-					<p>WarpMeta is moving its gaming teams to Full Auto</p>
-					<a href="/fullauto"><button class="btn">View Full Auto</button></a>
+					<p>View most recent WarpMeta content at our blog!</p>
+					<a href="/blog"><button class="btn">View Blog</button></a>
 				</div>
 				<div class="d-block d-sm-block d-md-block d-lg-none" id = "homeSmallText">
 					<h3>WarpMeta</h3>
-					<p>WarpMeta is moving its gaming teams to Full Auto</p>
-					<a href="/fullauto"><button class="btn">View Full Auto</button></a>
+					<p>View most recent WarpMeta content at our blog!</p>
+					<a href="/blog"><button class="btn">View Blog</button></a>
 				</div>
 			</div>
 	</div>
@@ -150,30 +150,20 @@
 				<h3 id="tournamentHeader">Upcoming Tournaments</h3>
 			</div>
 			<div class="row">
+			<!--  
 				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-november-qualifier-3/5dcb943b6b3429234be0c084/info?infoTab=details">
+					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-december-qualifier-2/5dcb95f149c052303afdc9d7/info?infoTab=details">
 					<div class="card">
 					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
 					    <div class="card-body">
-						  <p class="card-text">WarpMeta November Qualifier #3</p>
+						  <p class="card-text">WarpMeta December Qualifier #2</p>
 						  <hr class="my-4">
-						  <p class="card-text">Nov 16th, 2019 - 9:00AM PDT</p>
+						  <p class="card-text">Dec 8th, 2019 - 9:00AM PDT</p>
 						</div>
 					</div>
 					</a>
 				</div>
-				<div align="center" class="col-xl-4 col-lg-6 col-med-10 col-sm-12 col-12">
-					<a target="_blank" href="https://battlefy.com/warpmeta/warp-meta-november-qualifier-4/5dcb94f1901cc20d79e68b7f/info?infoTab=details">
-					<div class="card">
-					  <img style="height: 220px;" src="/img/TESLTeam.jpg" class="card-img-top" alt="TESL Tournament">
-					    <div class="card-body">
-						  <p class="card-text">WarpMeta November Qualifier #4</p>
-						  <hr class="my-4">
-						  <p class="card-text">Nov 17th, 2019 - 9:00AM PDT</p>
-						</div>
-					</div>
-					</a>
-				</div>
+			-->
 			</div>
 		</div>
 	</div>

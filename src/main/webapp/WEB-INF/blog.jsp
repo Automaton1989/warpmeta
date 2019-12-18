@@ -89,16 +89,16 @@
 	</nav>
 	<div class="container-fluid">
 	<div class="row">
-		<div align="center" id="blogMain">
+		<div align="center" id="blogMain" style="background-image: url('/image/${recentPost.fileName}');">
 			<div class="d-none d-sm-none d-md-none d-lg-block" id="blogText">
-				<h3><c:out value="${blog.title}"/></h3>
-				<p>We've moved our teams to Full Auto, and we're changing our direction!</p>
-				<a href="/blog/WarpMeta's%20New%20Website!"><button class="btn">Read More</button></a>
+				<h3><c:out value="${recentPost.title}"/></h3>
+				<p>${recentPost.description}</p>
+				<a href="/blog/${recentPost.title}"><button class="btn">Read More</button></a>
 			</div>
 			<div class="d-block d-sm-block d-md-block d-lg-none" id = "blogSmallText">
-				<h3><c:out value="${blog.title}"/></h3>
-				<p>We've moved our teams to Full Auto, and we're changing our direction!</p>
-				<a href="/blog/WarpMeta's%20New%20Website!"><button class="btn">Read More</button></a>
+				<h3><c:out value="${recentPost.title}"/></h3>
+				<p>${recentPost.description}</p>
+				<a href="/blog/${recentPost.title}"><button class="btn">Read More</button></a>
 			</div>
 		</div>
 	</div>

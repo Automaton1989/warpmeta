@@ -13,15 +13,12 @@
 <title>WarpMeta Gaming | Home</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="http://js.nicedit.com/nicEdit-latest.js"></script>
 
-<script>
-
-	bkLib.onDomLoaded(function() {
-		new nicEditor().panelInstance('NicEdit');
-	});
-
-</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 
 </head>
 <body>
@@ -93,7 +90,7 @@
 		                </div>
 		               	<div class="form-group">
 		                    <label for="content">Content: </label>
-		                    <form:textarea id="NicEdit" path="content" rows="5" class="form-control"/>
+		                    <form:textarea id="editor" path="content" rows="5" class="form-control"/>
 		                </div>
 		               	<div class="form-group">
 		                    <label for="image">Post Header: </label>
@@ -151,5 +148,10 @@
 		</div>
 	</div>
 </footer>
+  <script>
+    $(document).ready(function() {
+        $('#editor').summernote();
+    });
+  </script>
 </body>
 </html>

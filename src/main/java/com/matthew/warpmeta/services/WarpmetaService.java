@@ -103,6 +103,18 @@ public class WarpmetaService {
     	return posts;
     }
     
+    public Post recentPost(String title) {
+    	Blog blog = blogRepo.findByTitleIs(title);
+    	List<Post> posts = blog.getPosts();
+    	for (int i = 0; i < posts.size(); i++) {
+    		if(posts.get(i).isPublished() == true) {
+    			return posts.get(i);
+    		}
+    		
+    	}
+		return null;
+    }
+    
     public List<Video> reverseVideos() {
     	List<Video> videos = videoRepo.findAll();
     	Collections.reverse(videos);
@@ -179,7 +191,7 @@ public class WarpmetaService {
 		}
 	}
 	
-	public List<Post> findLastPost() {
+	public List<Post> findLast5Post() {
 		return postRepo.findTop5ByOrderByIdDesc();
 	}
 	
